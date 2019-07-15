@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="workstation id=prueba19.mssql.somee.com;packet size=4096;user id=cesarvi_SQLLogin_1;pwd=nugotghy5e;data source=prueba19.mssql.somee.com;persist security info=False;initial catalog=prueba19;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\cvr\\Documents\\Projects\\plantilla\\plantilla\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="plantillaContext-Web.config Connection String" description="plantillaContext Cadena de conexión que usa la aplicación en web.config para obtener acceso a la base de datos." defaultValue="workstation id=prueba19.mssql.somee.com;packet size=4096;user id=cesarvi_SQLLogin_1;pwd=nugotghy5e;data source=prueba19.mssql.somee.com;persist security info=False;initial catalog=prueba19;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\cvr\\Documents\\Projects\\plantilla\\plantilla\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='plantillaContext']/@connectionString" />
+  </parameter>
+</parameters>

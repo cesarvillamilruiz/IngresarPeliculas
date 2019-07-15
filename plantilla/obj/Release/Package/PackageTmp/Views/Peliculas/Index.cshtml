@@ -1,0 +1,86 @@
+﻿@model IEnumerable<plantilla.Models.Pelicula>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="d-flex" id="wrapper">
+   @Html.Partial("_sideBar")
+    
+    <div id="page-content-wrapper">
+
+        
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <button class="btn btn-primary" id="menu-toggle">Menu</button>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    @using (Html.BeginForm("Index", "Peliculas", FormMethod.Get))
+                    {
+                        <p >
+                            Genre: @Html.DropDownList("gendre", "All")
+                            @*Actor: @Html.TextBox("actor")*@
+                            <input type="tel" name="actor" placeholder="escribe un actor"  />
+                            <input type="submit" value="Filter" class="btn btn-success"  />
+                        </p>
+                    }
+                    
+
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+
+
+
+            <h1 class="mt-4">Peliculas</h1>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Duracion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Genero)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Duracion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Genero)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.PeliculaId }, new { @class = "btn btn-secondary" })
+                            @Html.ActionLink("Detalles", "Details", new { id = item.PeliculaId }, new { @class = "btn btn-secondary" })
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.PeliculaId }, new { @class = "btn btn-secondary" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+

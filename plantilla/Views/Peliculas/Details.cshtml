@@ -1,0 +1,70 @@
+﻿@model plantilla.Models.Pelicula
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<p style="float:right;" >
+    @Html.ActionLink("Edit", "Edit", null, new { id = Model.PeliculaId }, new { @class = "btn btn-danger" }) |
+    @Html.ActionLink("Back to List", "Index", null,  new { @class = "btn btn-secondary" })
+</p>
+
+<div>
+
+    
+    <dl class="dl-horizontal" style="margin-left:25%;width:50%;">
+        <h4>Pelicula</h4>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Duracion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duracion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaDeEstreno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaDeEstreno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sinopsis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sinopsis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Protagonista)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Protagonista)
+        </dd>
+
+    </dl>
+</div>
+
